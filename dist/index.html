@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pool Joe HVAC Hub - Fix Your AC, Furnace & Energy Bills</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Pool Joe connects homeowners with ultra-focused HVAC micro-sites for every common problem: AC not cooling, furnace not heating, high electric bills, and more."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1020;
+      --card-bg: #10172f;
+      --accent: #22d3ee;
+      --accent-soft: rgba(34, 211, 238, 0.12);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.2);
+      --radius-xl: 18px;
+      --radius-2xl: 24px;
+      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 72px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9 40%, #0f172a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e0f2fe;
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.6);
+    }
+
+    .logo-text-title {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 17px;
+    }
+
+    .logo-text-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+    }
+
+    nav a:hover {
+      border-color: rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+      text-decoration: none;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+      margin: 28px 0 36px;
+      align-items: center;
+    }
+
+    .hero-main {
+      padding-right: 8px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      color: #a5f3fc;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .hero-tag span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.1);
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 38px);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .hero-sub b {
+      color: #e5e7eb;
+    }
+
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      border-radius: 999px;
+      padding: 9px 18px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #06b6d4, #22c55e);
+      color: #ecfeff;
+      box-shadow: 0 14px 35px rgba(8, 47, 73, 0.9);
+    }
+
+    .btn-outline {
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      cursor: pointer;
+    }
+
+    .hero-secondary {
+      background: radial-gradient(circle at top, #0f172a 0, #020617 100%);
+      border-radius: var(--radius-2xl);
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-floating {
+      position: absolute;
+      right: 16px;
+      top: 18px;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .hero-secondary h2 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .hero-secondary p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-pool-tip {
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      margin-bottom: 10px;
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-micro-list {
+      list-style: none;
+      font-size: 12px;
+      margin: 4px 0 0;
+    }
+
+    .hero-micro-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 4px 0;
+    }
+
+    .hero-micro-list li span {
+      font-size: 13px;
+      color: var(--accent);
+    }
+
+    section {
+      margin: 40px 0;
+    }
+
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .grid.cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .grid.cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
+      padding: 16px 14px 14px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      opacity: 0.09;
+      background: radial-gradient(circle at top left, #22d3ee, transparent 55%);
+      pointer-events: none;
+    }
+
+    .card-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .card-pill {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .card-body {
+      position: relative;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .chip-row {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 4px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #cbd5f5;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .card-link svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .problem-card {
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .problem-card:hover,
+    .problem-card:focus-within {
+      transform: translateY(-2px);
+      border-color: rgba(34, 211, 238, 0.5);
+    }
+
+    .problem-card[data-active="true"] {
+      border-color: var(--accent);
+      box-shadow: 0 22px 45px rgba(34, 211, 238, 0.18);
+    }
+
+    .problem-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .problem-spotlight {
+      margin-top: 26px;
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(6, 78, 110, 0.65));
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 900px) {
+      .problem-spotlight {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.9fr);
+        align-items: center;
+      }
+    }
+
+    .spotlight-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .spotlight-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .spotlight-meta strong {
+      color: var(--text-main);
+    }
+
+    .spotlight-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(2, 6, 23, 0.65);
+      padding: 16px;
+    }
+
+    .spotlight-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .spotlight-summary {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .spotlight-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .spotlight-pill {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: #cbd5f5;
+    }
+
+    .spotlight-tip {
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .spotlight-tip span {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .spotlight-cta {
+      border-radius: 12px;
+      border: 1px solid rgba(34, 211, 238, 0.6);
+      background: rgba(8, 47, 73, 0.8);
+      color: #ecfeff;
+      padding: 10px 14px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .spotlight-cta:hover {
+      background: rgba(8, 47, 73, 0.95);
+    }
+
+    .interactive-lab {
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96) 0, rgba(2, 6, 23, 0.9) 70%);
+      padding: 18px 16px 22px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .lab-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    @media (min-width: 900px) {
+      .lab-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .lab-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(8, 47, 73, 0.8));
+      padding: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .lab-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .lab-field {
+      display: block;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .lab-field input,
+    .lab-field select {
+      width: 100%;
+      margin-top: 4px;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(2, 6, 23, 0.9);
+      color: #e5e7eb;
+      padding: 7px 8px;
+      font-size: 13px;
+    }
+
+    .lab-field select {
+      appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, #22d3ee 50%),
+        linear-gradient(135deg, #22d3ee 50%, transparent 50%);
+      background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+    }
+
+    .lab-action {
+      margin-top: 12px;
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+      padding: 10px 12px;
+      font-weight: 600;
+      font-size: 13px;
+      background: linear-gradient(135deg, #0ea5e9, #22c55e);
+      color: #ecfeff;
+      cursor: pointer;
+    }
+
+    .lab-output {
+      margin-top: 10px;
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.6);
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    .lab-output strong {
+      color: var(--text-main);
+    }
+
+    .lab-inline-tip {
+      display: block;
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .lab-slider {
+      margin-top: 14px;
+      font-size: 12px;
+    }
+
+    .lab-slider input[type="range"] {
+      width: 100%;
+      accent-color: #22d3ee;
+    }
+
+    .lab-slider-readout {
+      margin-top: 4px;
+      color: var(--accent);
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .lab-stress-note {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .problem-section {
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, #020617 0, #020617 34%, #020617 100%);
+      padding: 18px 16px 16px;
+      margin-bottom: 26px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .problem-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .problem-title {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .problem-url {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .problem-layout {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 900px) {
+      .problem-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      }
+    }
+
+    .problem-col h4 {
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .problem-col p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .problem-list {
+      font-size: 13px;
+      padding-left: 16px;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .problem-list li {
+      margin-bottom: 4px;
+    }
+
+    .problem-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    .problem-pill {
+      font-size: 11px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #c7d2fe;
+    }
+
+    .tool-box {
+      margin-top: 6px;
+      padding: 8px 9px;
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .tool-box label {
+      display: block;
+      font-size: 11px;
+      margin-top: 4px;
+      margin-bottom: 2px;
+    }
+
+    .tool-box input {
+      width: 100%;
+      padding: 5px 6px;
+      border-radius: 8px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      font-size: 12px;
+    }
+
+    .tool-note {
+      font-size: 11px;
+      margin-top: 4px;
+      color: #64748b;
+    }
+
+    .related-links {
+      margin-top: 6px;
+      font-size: 12px;
+    }
+
+    .related-links a {
+      color: #a5b4fc;
+    }
+
+    .about-block {
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-subtle);
+      background: radial-gradient(circle at top, #020617 0, #020617 100%);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-layout {
+      display: grid;
+      gap: 16px;
+    }
+
+    @media (min-width: 900px) {
+      .about-layout {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      }
+    }
+
+    .about-highlight {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .about-list {
+      font-size: 13px;
+      padding-left: 16px;
+      color: var(--text-muted);
+    }
+
+    .badge-pool {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.7);
+      color: #e0f2fe;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .badge-pool span {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .faq-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .faq-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .faq-item {
+      border-radius: 16px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.98);
+      overflow: hidden;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .faq-item[data-open="true"] {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .faq-toggle {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 14px 12px;
+      background: transparent;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .faq-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .faq-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      transition: transform 0.25s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .faq-item[data-open="true"] .faq-icon {
+      transform: rotate(45deg);
+      border-color: rgba(34, 211, 238, 0.7);
+      background: rgba(34, 211, 238, 0.1);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 0 14px;
+      transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.35s ease;
+    }
+
+    .faq-item[data-open="true"] .faq-answer {
+      max-height: 600px;
+      opacity: 1;
+      padding-bottom: 14px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 900px) {
+      .reviews-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .review-card {
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 12px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .review-name {
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-top: 6px;
+    }
+
+    .review-meta {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+      font-size: 11px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        border-radius: 18px;
+      }
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-secondary {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">PJ</div>
+        <div>
+          <div class="logo-text-title">Pool Joe</div>
+          <div class="logo-text-sub">HVAC Fixes * Billiards Tricks * Micro-Sites</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#problems">HVAC Problem Hub</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-main">
+          <div class="hero-tag">
+            <span></span> 10 micro-sites * 1 HVAC brain * Zero guesswork
+          </div>
+          <h1 class="hero-title">
+            Fix your <span>AC, heat & energy bills</span> with Pool Joe's problem-specific websites.
+          </h1>
+          <p class="hero-sub">
+            Every common HVAC issue gets its own dedicated mini-site: <b>AC not cooling</b>,
+            <b>furnace not heating</b>, <b>high electric bills</b>, and more. Each one is packed
+            with trivia, tools, polls, and straight-talk answers--no fluff, no thin content.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary" onclick="document.getElementById('problems').scrollIntoView({behavior:'smooth'})">
+              Explore the 10 HVAC Problem Sites
+            </button>
+            <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+              Learn about Pool Joe
+            </button>
+          </div>
+        </div>
+        <aside class="hero-secondary">
+          <div class="badge-floating">All 10 can become separate standalone websites</div>
+          <h2>What is this page?</h2>
+          <p>
+            This is the central lobby for the <b>Pool Joe HVAC Problem Network</b>: a collection
+            of ultra-focused sites, each laser-targeted to one repair issue.
+          </p>
+          <div class="hero-pool-tip">
+            Pool Joe Cue Tip: <b>Pool Joe's Cue Tip:</b> In billiards, you never hit every ball at once--you
+            line up one shot at a time. Same here: each website is one precise shot at a single
+            Google search like "AC not cooling" or "AC smells bad".
+          </div>
+          <ul class="hero-micro-list">
+            <li><span>*</span> 10 micro-sites now, more later.</li>
+            <li><span>*</span> Each can live on its own domain (e.g. <b>ACNotCooling.com</b>) or under <b>pooljoe.com</b>.</li>
+            <li><span>*</span> Polls, trivia, tools and FAQs tuned to that exact problem.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-label">About Pool Joe</div>
+        <h2 class="section-title">From pool table to air handler: meet Joe.</h2>
+        <p class="section-sub">
+          Pool Joe is that friend who can sink a trick shot, spot a bad capacitor by ear,
+          and explain SEER ratings without putting you to sleep. This homepage introduces
+          him and explains how the 10 micro-sites connect.
+        </p>
+
+        <div class="about-block">
+          <div class="about-layout">
+            <div>
+              <div class="badge-pool">
+                <span></span> Billiards nerd * HVAC translator * Website splitter
+              </div>
+              <p class="about-highlight">
+                Joe grew up around two things: old pool halls and even older HVAC units. He
+                learned fast that both have a few basic rules: line up your shot, know your angles,
+                and don't ignore a bad noise.
+              </p>
+              <ul class="about-list">
+                <li><b>Pool hall logic, HVAC edition:</b> Every problem has a pattern. If your AC
+                  isn't cooling, your furnace isn't heating, or your bill suddenly jumped, there's a
+                  predictable list of suspects. Each Pool Joe micro-site walks you through that logic
+                  for one specific issue.
+                </li>
+                <li><b>How to play billiards, Pool Joe style:</b> Joe still hosts occasional "HVAC &amp;
+                  Hustle" nights--half hour learning cue ball control, half hour learning how your
+                  thermostat talks to your air handler. The point: when you understand the system,
+                  you stop feeling stuck.
+                </li>
+                <li><b>Why 10 separate websites?</b> Google loves specialists. A page that only talks
+                  about "AC not cooling" can go deeper: trivia, symptoms, tools, FAQs, and next steps.
+                  This homepage simply ties them together so you see the full map.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">How the 10 micro-sites fit together</div>
+                  <div class="card-pill">Architecture</div>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Think of each HVAC problem as its own "table" in a huge tournament:
+                    <b>AC Not Cooling</b>, <b>Furnace Not Heating</b>, <b>High Electric Bill</b>, etc.
+                    This homepage is the bracket view--you can hop to whichever table (site) matters
+                    to you.
+                  </p>
+                  <div class="chip-row">
+                    <span class="chip">1 issue = 1 site</span>
+                    <span class="chip">Tools &amp; trivia per problem</span>
+                    <span class="chip">Internal links between related issues</span>
+                  </div>
+                  <p style="margin-top:8px;">
+                    Below, you'll see all 10 problem types as cards. Each card links to its future
+                    standalone site and also has a rich content section further down this page so you
+                    aren't stuck with thin or duplicated copy.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROBLEM HUB -->
+      <section id="problems">
+        <div class="section-label">HVAC Problem Hub</div>
+        <h2 class="section-title">10 focused micro-sites (each its own problem and website).</h2>
+        <p class="section-sub">
+          Below are the 10 issues people search for constantly. Each card represents a
+          <b>standalone site</b> (today or in the future), and each has its own detailed section
+          on this page with trivia, facts, polls, tools, and internal links.
+        </p>
+
+        <div class="grid cols-3">
+          <!-- 1 AC Not Cooling -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="AC Not Cooling"
+            data-problem-summary="Warm supply temps usually mean airflow loss or a refrigerant leak starving the coil."
+            data-problem-tip="Feel the return grille; weak suction means swap the filter and open closed doors before anything else."
+            data-problem-link="#ac-not-cooling"
+          >
+            <div class="card-header">
+              <div class="card-title">AC Not Cooling</div>
+              <div class="card-pill">Problem Site #1</div>
+            </div>
+            <div class="card-body">
+              "Why is my AC blowing warm air?" -- the most common summer search.
+              <div class="chip-row">
+                <span class="chip">Warm air from vents</span>
+                <span class="chip">Filter or refrigerant</span>
+              </div>
+              <a href="#ac-not-cooling" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 2 Furnace Not Heating -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="Furnace Not Heating"
+            data-problem-summary="Lockouts from dirty flame sensors or limit switches leave the blower moving cold air only."
+            data-problem-tip="Watch the ignition steps; if you hear a click without flame, cut power and schedule a sensor cleaning."
+            data-problem-link="#furnace-not-heating"
+          >
+            <div class="card-header">
+              <div class="card-title">Furnace Not Heating</div>
+              <div class="card-pill">Problem Site #2</div>
+            </div>
+            <div class="card-body">
+              Cold vents in January, pilot lights misbehaving, and midnight emergency calls.
+              <div class="chip-row">
+                <span class="chip">No heat</span>
+                <span class="chip">Pilot issues</span>
+              </div>
+              <a href="#furnace-not-heating" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3 AC Leaking Water -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="AC Leaking Water"
+            data-problem-summary="Condensate drains clog fast so backup water finds drywall seams and closet floors."
+            data-problem-tip="Pour a cup of hot water or vinegar into the service tee monthly to keep sludge from building up."
+            data-problem-link="#ac-leaking-water"
+          >
+            <div class="card-header">
+              <div class="card-title">AC Leaking Water</div>
+              <div class="card-pill">Problem Site #3</div>
+            </div>
+            <div class="card-body">
+              Ceiling spots, puddles by the closet unit, and clogged drain lines.
+              <div class="chip-row">
+                <span class="chip">Leaks inside</span>
+                <span class="chip">Drain pan / line</span>
+              </div>
+              <a href="#ac-leaking-water" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 4 Thermostat Not Working -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="Thermostat Not Working"
+            data-problem-summary="A miswired or battery-starved thermostat makes the whole system ignore your commands."
+            data-problem-tip="Replace the batteries, confirm the system type in settings, and keep lamps or sun away from the sensor."
+            data-problem-link="#thermostat-not-working"
+          >
+            <div class="card-header">
+              <div class="card-title">Thermostat Not Working</div>
+              <div class="card-pill">Problem Site #4</div>
+            </div>
+            <div class="card-body">
+              Blank screens, wrong temperatures, and "it used to listen to me".
+              <div class="chip-row">
+                <span class="chip">Blank display</span>
+                <span class="chip">Smart upgrade</span>
+              </div>
+              <a href="#thermostat-not-working" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 5 Weak Airflow -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="Weak Airflow"
+            data-problem-summary="High static pressure from blocked returns or undersized ducts chokes airflow upstairs."
+            data-problem-tip="Walk the house and open every return grille before blaming the blower motor."
+            data-problem-link="#weak-airflow"
+          >
+            <div class="card-header">
+              <div class="card-title">Weak Airflow</div>
+              <div class="card-pill">Problem Site #5</div>
+            </div>
+            <div class="card-body">
+              Rooms that never cool, vents that whisper, and dust that never settles.
+              <div class="chip-row">
+                <span class="chip">Uneven rooms</span>
+                <span class="chip">Duct issues</span>
+              </div>
+              <a href="#weak-airflow" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 6 AC Making Noise -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="AC Making Noise"
+            data-problem-summary="Loose panels, failing bearings, or debris in the fan cage turn into rattles that shake the ducts."
+            data-problem-tip="If pressing the panel changes the sound, schedule a tightening before the vibration breaks components."
+            data-problem-link="#ac-making-noise"
+          >
+            <div class="card-header">
+              <div class="card-title">AC Making Noise</div>
+              <div class="card-pill">Problem Site #6</div>
+            </div>
+            <div class="card-body">
+              Rattles, squeals, and bangs that sound like a drum solo in your attic.
+              <div class="chip-row">
+                <span class="chip">Rattles</span>
+                <span class="chip">Squeals / bangs</span>
+              </div>
+              <a href="#ac-making-noise" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 7 AC Freezing Up -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="AC Freezing Up"
+            data-problem-summary="Ice shows up when coils drop below freezing because airflow or refrigerant mass is too low."
+            data-problem-tip="Run the fan only for 30 minutes to thaw, then check filters and vents before restarting cooling."
+            data-problem-link="#ac-freezing-up"
+          >
+            <div class="card-header">
+              <div class="card-title">AC Freezing Up</div>
+              <div class="card-pill">Problem Site #7</div>
+            </div>
+            <div class="card-body">
+              Ice on lines, frozen coils, and systems that suffocate instead of breathe.
+              <div class="chip-row">
+                <span class="chip">Ice on pipes</span>
+                <span class="chip">Filter / airflow</span>
+              </div>
+              <a href="#ac-freezing-up" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 8 AC Smells Bad -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="AC Smells Bad"
+            data-problem-summary="Musty coils, burnt wires, or chemical leaks each have a different scent and urgency level."
+            data-problem-tip="If it smells electrical, shut the breaker off and call a pro before running the fan again."
+            data-problem-link="#ac-smells-bad"
+          >
+            <div class="card-header">
+              <div class="card-title">AC Smells Bad</div>
+              <div class="card-pill">Problem Site #8</div>
+            </div>
+            <div class="card-body">
+              Musty, burnt, or chemical smells that ruin a perfectly good movie night.
+              <div class="chip-row">
+                <span class="chip">Musty coils</span>
+                <span class="chip">Burnt electronics</span>
+              </div>
+              <a href="#ac-smells-bad" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 9 AC Not Turning On -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="AC Not Turning On"
+            data-problem-summary="Safety switches, float sensors, or tripped breakers stop the first relay click from finishing."
+            data-problem-tip="If you hear a faint hum but no spin at the outdoor unit, the capacitor likely needs a swap."
+            data-problem-link="#ac-not-turning-on"
+          >
+            <div class="card-header">
+              <div class="card-title">AC Not Turning On</div>
+              <div class="card-pill">Problem Site #9</div>
+            </div>
+            <div class="card-body">
+              Dead silence when you hit "Cool" and a thermostat that swears it's trying.
+              <div class="chip-row">
+                <span class="chip">Power issues</span>
+                <span class="chip">Thermostat / breaker</span>
+              </div>
+              <a href="#ac-not-turning-on" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 10 High Energy Bills -->
+          <article
+            class="card problem-card"
+            tabindex="0"
+            role="button"
+            data-problem-title="High Energy Bills / Inefficiency"
+            data-problem-summary="Older single-stage units sip more power every season, so bills climb even when comfort does not."
+            data-problem-tip="Compare this month's kWh to last year; a 20 percent jump means an efficiency audit pays for itself."
+            data-problem-link="#high-energy-bills"
+          >
+            <div class="card-header">
+              <div class="card-title">High Energy Bills / Inefficiency</div>
+              <div class="card-pill">Problem Site #10</div>
+            </div>
+            <div class="card-body">
+              Power bills that climb every season while comfort stays the same.
+              <div class="chip-row">
+                <span class="chip">Upgrade timing</span>
+                <span class="chip">Efficiency &amp; rebates</span>
+              </div>
+              <a href="#high-energy-bills" class="card-link">
+                View section &amp; future site details
+                <svg viewBox="0 0 20 20" fill="none">
+                  <path d="M6 14L14 6M9 6H14V11" stroke="#22d3ee" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="problem-spotlight" id="problem-spotlight">
+          <div class="spotlight-meta">
+            <div class="spotlight-kicker">Live problem radar</div>
+            <p>
+              Hover or tap a card to update the <strong>Problem Spotlight</strong>. It gives you
+              a quick read on what to check first and links straight to the deep-dive micro-site.
+            </p>
+          </div>
+          <div class="spotlight-card">
+            <div class="spotlight-title" id="spotlight-title">AC Not Cooling</div>
+            <p class="spotlight-summary" id="spotlight-summary">
+              Warm supply temps usually mean airflow loss or a refrigerant leak starving the coil.
+            </p>
+            <div class="spotlight-pill-row">
+              <span class="spotlight-pill">Filter &amp; airflow check</span>
+              <span class="spotlight-pill">Problem Site #1</span>
+            </div>
+            <div class="spotlight-tip">
+              <span>Pool Joe Cue Tip</span>
+              <p id="spotlight-tip">
+                Feel the return grille; weak suction means swap the filter and open closed doors before anything else.
+              </p>
+            </div>
+            <button class="spotlight-cta" id="spotlight-cta" type="button" data-link="#ac-not-cooling">
+              Jump to the full game plan
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- DETAILED PROBLEM SECTIONS -->
+      <!-- 1 AC NOT COOLING -->
+      <section id="ac-not-cooling" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">AC Not Cooling - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/ac-not-cooling or ACNotCooling.com</div>
+          </div>
+          <div class="card-pill">Problem Site #1</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              "AC not cooling" is the classic summer panic search. This problem site walks
+              through the usual suspects--filters, coils, refrigerant, and airflow--using plain
+              English, polls, and quick tools.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>Many systems can lose 5-10% efficiency per year if filters are never changed.</li>
+              <li>A slightly frozen coil can look harmless at first...but it often means airflow or refrigerant trouble.</li>
+              <li>Running an AC that isn't cooling for hours just to "see if it catches up" usually makes the problem worse.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Most "not cooling" calls start with a dirty filter or blocked return vent.</li>
+              <li>Low refrigerant is a symptom, not a plan--if it's low, it probably leaked somewhere.</li>
+              <li>Closing too many supply vents can starve your system of airflow.</li>
+            </ul>
+            <h4>Poll Questions (on the micro-site)</h4>
+            <ul class="problem-list">
+              <li>How long has your AC been blowing warm air?</li>
+              <li>Is the airflow strong or weak from your vents?</li>
+              <li>Have you changed your filter in the past 60 days?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-freezing-up">AC Freezing Up</a> -
+              <a href="#weak-airflow">Weak Airflow</a> -
+              <a href="#high-energy-bills">High Energy Bills</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Quick Cooling Health Check"</h4>
+            <p>
+              The micro-site can feature a simple tool that estimates how "healthy" the cooling
+              system is based on a few basic inputs:
+            </p>
+            <div class="tool-box">
+              <label for="age-ac">Age of AC unit (years)</label>
+              <input id="age-ac" type="number" placeholder="e.g. 3" />
+              <label for="filter">Days since filter was changed</label>
+              <input id="filter" type="number" placeholder="e.g. 45" />
+              <label for="runtime">Average hours per day the AC runs</label>
+              <input id="runtime" type="number" placeholder="e.g. 8" />
+              <p class="tool-note">
+                On the live site, this tool would score your system and recommend: "DIY filter
+                swap", "Schedule a coil cleaning", or "Time for a professional diagnostic".
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Get a Same-Day Cooling Check -- Local Techs Available Now."</b> The micro-site
+              lead form can tag this specific problem so dispatch knows it's a warm-air situation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 FURNACE NOT HEATING -->
+      <section id="furnace-not-heating" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">Furnace Not Heating - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/furnace-not-heating or FurnaceNotHeating.com</div>
+          </div>
+          <div class="card-pill">Problem Site #2</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              When the furnace blows cold air or shuts off after a few minutes, comfort drops
+              fast. This site explains pilot lights, ignition sequences, and safety switches
+              without getting overly technical.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>Some modern furnaces can try to ignite three times and then lock out for safety.</li>
+              <li>A furnace that "short cycles" can waste more gas than one that runs steadily.</li>
+              <li>Many people only find out their furnace is broken on the first cold night of the year.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Dirty flame sensors are a common cause of furnaces shutting off quickly.</li>
+              <li>An orange or yellow flame can mean improper combustion.</li>
+              <li>Regular tune-ups can catch issues long before the no-heat emergency.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>Is the fan running but no heat coming out?</li>
+              <li>Does the pilot light stay on?</li>
+              <li>When was your last furnace tune-up?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-not-turning-on">AC Not Turning On</a> -
+              <a href="#high-energy-bills">High Energy Bills</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "No-Heat Triage Checklist"</h4>
+            <p>
+              The micro-site can walk users through a safe step-by-step triage (no panels removed):
+            </p>
+            <ul class="problem-list">
+              <li>Check thermostat mode and temperature.</li>
+              <li>Note any error codes or blinking lights on the furnace.</li>
+              <li>Listen for the sequence: inducer fan -> ignition -> main burner -> blower.</li>
+            </ul>
+            <div class="tool-box">
+              <p><b>Simple checklist tracker:</b> On the site, users can tap checkboxes to mark what they've already tried and submit that with the lead so the tech arrives pre-briefed.</p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Book an Emergency Heating Visit -- Today Only $49 Diagnostic."</b> This headline
+              is time-sensitive without feeling gimmicky and can rotate seasonally.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 AC LEAKING WATER -->
+      <section id="ac-leaking-water" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">AC Leaking Water - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/ac-leaking-water or ACLeakingWater.com</div>
+          </div>
+          <div class="card-pill">Problem Site #3</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              Water around the unit can mean a clogged drain line, rusted pan, or frozen coil
+              melting. This site explains why ACs make water in the first place and when to
+              worry about ceilings and flooring.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>High humidity climates can produce several gallons of condensate per day.</li>
+              <li>Some drain lines terminate outside and quietly drip where homeowners never look.</li>
+              <li>Algae and sludge are frequent culprits in drain line clogs.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Water inside near the indoor unit is more urgent than a small drip outside.</li>
+              <li>A safety float switch can shut your system off to prevent overflow.</li>
+              <li>Ignoring small leaks can lead to mold or drywall repairs later.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>Is the leak inside or outside your home?</li>
+              <li>Is your AC still cooling properly?</li>
+              <li>Do you see ice on the pipes?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-freezing-up">AC Freezing Up</a> -
+              <a href="#ac-smells-bad">AC Smells Bad</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Leak Severity Estimator"</h4>
+            <p>
+              The micro-site can ask a few questions and then categorize the leak as "watch",
+              "soon", or "urgent".
+            </p>
+            <div class="tool-box">
+              <label for="leak-size">Size of puddle (approx. inches wide)</label>
+              <input id="leak-size" type="number" placeholder="e.g. 12" />
+              <label for="leak-location">Location (floor / ceiling / outside)</label>
+              <input id="leak-location" type="text" placeholder="e.g. hallway closet floor" />
+              <p class="tool-note">
+                On the real site, this would give a severity label ("urgent if near ceiling or
+                electrical") and nudge the user to schedule service before damage spreads.
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Stop the Leak -- Get a Free Drain Line Inspection."</b> Perfect for promoting
+              maintenance plans too.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 THERMOSTAT NOT WORKING -->
+      <section id="thermostat-not-working" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">Thermostat Not Working - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/thermostat-not-working or ThermostatNotWorking.com</div>
+          </div>
+          <div class="card-pill">Problem Site #4</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              The thermostat is the "cue ball" of the system--every play starts there. This site
+              explains blank screens, short cycling, misread temperatures, and why smart
+              thermostats can help (or hurt if wired wrong).
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>Many smart thermostats need a C-wire and can misbehave when power-starved.</li>
+              <li>Placing a thermostat near a lamp or in direct sun can cause phantom temperature swings.</li>
+              <li>Some thermostats can store error history you never knew existed.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Dead batteries can mimic bigger problems--always check them first.</li>
+              <li>Incorrect system type settings can prevent heating or cooling from running.</li>
+              <li>Outdated thermostats may not handle multi-stage or heat pump systems properly.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>Is the thermostat screen blank?</li>
+              <li>Do you hear the system click when changing temperature?</li>
+              <li>Would you like a smart thermostat quote?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-not-turning-on">AC Not Turning On</a> -
+              <a href="#high-energy-bills">High Energy Bills</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Thermostat Upgrade Matchmaker"</h4>
+            <p>
+              The micro-site can suggest thermostat types based on user preferences and system type.
+            </p>
+            <div class="tool-box">
+              <label>Current system (heat pump / gas furnace / other)</label>
+              <input type="text" placeholder="e.g. heat pump with electric backup" />
+              <label>Priority (simplicity / smart home / energy savings)</label>
+              <input type="text" placeholder="e.g. energy savings + app control" />
+              <p class="tool-note">
+                Output on the live site: "You're a great fit for a basic Wi-Fi thermostat" or
+                "You'd benefit from a fully smart thermostat with learning features."
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Get a Free Smart Thermostat Install Estimate."</b> Ideal for upselling controls
+              with every service visit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 WEAK AIRFLOW -->
+      <section id="weak-airflow" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">Weak Airflow & Uneven Rooms - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/weak-airflow or WeakAirflow.com</div>
+          </div>
+          <div class="card-pill">Problem Site #5</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              Weak airflow is that subtle annoyance that turns into "Why is the upstairs always
+              miserable?". This micro-site focuses on duct sizing, restrictions, blower problems,
+              and simple fixes like vent balancing.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>Many homes have supply vents closed in too many rooms, choking the system.</li>
+              <li>Furniture and rugs often block returns without homeowners noticing.</li>
+              <li>Leaky ducts in attics can waste conditioned air you already paid for.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Weak airflow can shorten equipment life by stressing motors and coils.</li>
+              <li>Proper duct design is as important as the equipment itself.</li>
+              <li>Sometimes a simple register upgrade can noticeably change comfort.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>Is the airflow weak in one room or all rooms?</li>
+              <li>Have your ducts been cleaned in the past two years?</li>
+              <li>Do you notice extra dust in the house?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-not-cooling">AC Not Cooling</a> -
+              <a href="#ac-freezing-up">AC Freezing Up</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Room-by-Room Comfort Map"</h4>
+            <p>
+              On the live micro-site, users could enter a quick comfort rating for each room
+              (1-5) and see a simple heat map of where problems cluster.
+            </p>
+            <div class="tool-box">
+              <label>Most uncomfortable room</label>
+              <input type="text" placeholder="e.g. upstairs bedroom" />
+              <label>What's wrong there? (too hot / too cold / stuffy)</label>
+              <input type="text" placeholder="e.g. too hot & stuffy in summer" />
+              <p class="tool-note">
+                The output: "Likely duct or airflow issue focused on this side of the home"
+                + suggestion to schedule a duct and register evaluation.
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Schedule a Duct Inspection -- Restore Full Airflow Today."</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 AC MAKING NOISE -->
+      <section id="ac-making-noise" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">AC Making Noise - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/ac-making-noise or ACMakingNoise.com</div>
+          </div>
+          <div class="card-pill">Problem Site #6</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              From fan blades hitting branches to compressors groaning on their last summer,
+              this site turns weird sounds into understandable patterns.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>A metallic scraping sound can be as simple as a loose fan shroud.</li>
+              <li>High-pitched squeals often involve belts or bearings.</li>
+              <li>A sudden loud bang can be ductwork flexing with pressure changes.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Ignoring new noises is one of the fastest ways to damage equipment.</li>
+              <li>Recording a short phone video helps techs diagnose before arriving.</li>
+              <li>Some noises are harmless, others are "turn it off now" level.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>What kind of noise do you hear? (Rattle / Squeal / Bang / Buzz)</li>
+              <li>Is it constant or only when starting?</li>
+              <li>How old is your unit?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-not-turning-on">AC Not Turning On</a> -
+              <a href="#ac-not-cooling">AC Not Cooling</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Noise Type Classifier (Manual)"</h4>
+            <p>
+              The micro-site can guide users to choose the closest noise and see likely causes.
+            </p>
+            <div class="tool-box">
+              <label>Describe the noise in one word</label>
+              <input type="text" placeholder="e.g. rattle / screech / buzz" />
+              <p class="tool-note">
+                On the full version, this would show: "Most common causes for a 'buzz' sound"
+                and a safe note: "Turn system off if smell or smoke is present."
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Request a 30-Minute Noise Diagnostic Visit."</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 AC FREEZING UP -->
+      <section id="ac-freezing-up" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">AC Freezing Up - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/ac-freezing-up or ACFreezingUp.com</div>
+          </div>
+          <div class="card-pill">Problem Site #7</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              Ice on pipes looks cool until you realize it means your system is suffocating.
+              This site explains filters, airflow, blower speed, and refrigerant from a
+              homeowner's perspective.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>An AC freezing up can eventually flood your drain pan when it thaws.</li>
+              <li>Sometimes just running the fan (no cooling) can help thaw the coil.</li>
+              <li>Low airflow is one of the most common triggers for icing.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Never chip ice off coils--that can damage fins and tubing.</li>
+              <li>Frozen suction lines wrapped in insulation can hide the problem from view.</li>
+              <li>Many freeze-ups involve both airflow and refrigerant issues together.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>Do you see ice on your AC lines or coils?</li>
+              <li>When did you last replace the air filter?</li>
+              <li>Does the system run non-stop?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-not-cooling">AC Not Cooling</a> -
+              <a href="#weak-airflow">Weak Airflow</a> -
+              <a href="#ac-leaking-water">AC Leaking Water</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Freeze-Up Risk Checker"</h4>
+            <p>
+              The micro-site can estimate freeze-up risk based on runtime, filter schedule,
+              and climate.
+            </p>
+            <div class="tool-box">
+              <label>Average daily runtime (hours)</label>
+              <input type="number" placeholder="e.g. 12" />
+              <label>Days since last filter change</label>
+              <input type="number" placeholder="e.g. 90" />
+              <p class="tool-note">
+                The tool output: "Low / Medium / High freeze-up risk" with practical advice:
+                "Change filter now and monitor for ice for 24 hours."
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Melt Away the Problem -- Book Your Defrost & Tune-Up."</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 AC SMELLS BAD -->
+      <section id="ac-smells-bad" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">AC Smells Bad - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/ac-smells-bad or ACSmellsBad.com</div>
+          </div>
+          <div class="card-pill">Problem Site #8</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              Smells travel wherever air flows. This site separates musty coil issues from burnt
+              electrical smells and chemical odors from refrigerant leaks or nearby products.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>Dirty sock syndrome is a real nickname for certain coil odor problems.</li>
+              <li>Some smells come from nearby garages or storage areas pulled into returns.</li>
+              <li>Burnt dust odors can be normal for a short time when heat first kicks on.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Persistent musty smells can point to moisture and potential mold.</li>
+              <li>Electrical or "burning plastic" smells should be treated as urgent.</li>
+              <li>UV lights and coil cleaning are common solutions for odor control.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>What kind of smell do you notice? (Musty / Burnt / Chemical)</li>
+              <li>Does the smell appear only when AC starts?</li>
+              <li>Do you have pets or recent water damage?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-leaking-water">AC Leaking Water</a> -
+              <a href="#high-energy-bills">High Energy Bills</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Smell Type Guide"</h4>
+            <p>
+              This tool doesn't diagnose but gives guidance based on smell type and duration.
+            </p>
+            <div class="tool-box">
+              <label>Smell description</label>
+              <input type="text" placeholder="e.g. musty like wet towels" />
+              <label>How long has it been noticeable?</label>
+              <input type="text" placeholder="e.g. 2 weeks whenever AC runs" />
+              <p class="tool-note">
+                The live output: "Likely moisture/coil related--schedule a coil inspection
+                and duct evaluation."
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Get a Coil &amp; Duct Sanitizing Quote."</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 AC NOT TURNING ON -->
+      <section id="ac-not-turning-on" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">AC Not Turning On - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/ac-not-turning-on or ACNotTurningOn.com</div>
+          </div>
+          <div class="card-pill">Problem Site #9</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              No clicks, no hum, no airflow--just a house getting warmer. This site covers
+              breakers, disconnects, float switches, thermostat wiring, and when to stop
+              trying to reset things yourself.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>Some outdoor units have a hidden disconnect box that can be accidentally pulled.</li>
+              <li>Condensate float switches can shut the system down to avoid water damage.</li>
+              <li>Weak or failing capacitors are behind a lot of no-start calls.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>Repeatedly flipping breakers can be unsafe--there's a reason it keeps tripping.</li>
+              <li>Checking simple things like thermostat batteries can save a service call.</li>
+              <li>Outdoor fans and compressors should be treated with caution--no DIY poking around inside.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>Is the thermostat screen on?</li>
+              <li>Do you hear a click when the system should start?</li>
+              <li>Has a breaker tripped recently?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#thermostat-not-working">Thermostat Not Working</a> -
+              <a href="#ac-making-noise">AC Making Noise</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Safe Pre-Call Checklist"</h4>
+            <p>
+              This scripted tool helps homeowners perform a few safe checks before they call:
+            </p>
+            <div class="tool-box">
+              <p>On the micro-site, users can tap through questions like:</p>
+              <ul class="problem-list">
+                <li>"Is the thermostat set to COOL and below room temperature?"</li>
+                <li>"Are any breakers clearly in the middle position?"</li>
+                <li>"Do you hear any buzzing from the outdoor unit?"</li>
+              </ul>
+              <p class="tool-note">
+                When they submit a service request, the answers come along--giving techs a head
+                start before they arrive.
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Get Emergency Power Diagnostic -- Techs in Your Area Now."</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 HIGH ENERGY BILLS -->
+      <section id="high-energy-bills" class="problem-section">
+        <div class="problem-header">
+          <div>
+            <div class="problem-title">High Energy Bills / Inefficiency - Dedicated Micro-Site</div>
+            <div class="problem-url">Future URL: https://pooljoe.com/high-electric-bill or HighEnergyBills.com</div>
+          </div>
+          <div class="card-pill">Problem Site #10</div>
+        </div>
+        <div class="problem-layout">
+          <div class="problem-col">
+            <h4>Overview</h4>
+            <p>
+              This micro-site is where math meets comfort. Instead of guessing, homeowners can
+              see how much money old equipment, poor ductwork, or bad habits might be burning.
+            </p>
+            <h4>Trivia</h4>
+            <ul class="problem-list">
+              <li>A 20-year-old system can use 30-50% more energy than a modern efficient unit.</li>
+              <li>Small thermostat changes (like 2 degreesF) can noticeably affect monthly bills.</li>
+              <li>Leaky ducts can send cooled air straight into attics and crawlspaces.</li>
+            </ul>
+            <h4>Fast Facts</h4>
+            <ul class="problem-list">
+              <li>High bills can come from equipment, ductwork, insulation, or just long runtimes.</li>
+              <li>Right-sizing new equipment matters--bigger is not always cheaper to run.</li>
+              <li>Local rebates and tax credits can offset a large chunk of upgrade costs.</li>
+            </ul>
+            <h4>Poll Questions</h4>
+            <ul class="problem-list">
+              <li>How old is your HVAC system?</li>
+              <li>Has your power bill gone up this season?</li>
+              <li>Would you like a free efficiency audit?</li>
+            </ul>
+            <div class="related-links">
+              Related: <a href="#ac-not-cooling">AC Not Cooling</a> -
+              <a href="#weak-airflow">Weak Airflow</a> -
+              <a href="#thermostat-not-working">Thermostat Not Working</a>
+            </div>
+          </div>
+          <div class="problem-col">
+            <h4>Tool Idea: "Rough Savings Estimator"</h4>
+            <p>
+              The micro-site can host a simple calculator that helps people visualize potential
+              savings from an upgrade.
+            </p>
+            <div class="tool-box">
+              <label>Average monthly electric bill ($)</label>
+              <input type="number" placeholder="e.g. 320" />
+              <label>Age of current system (years)</label>
+              <input type="number" placeholder="e.g. 16" />
+              <p class="tool-note">
+                On the live version, this might show an estimated annual savings range and how
+                many years it could take an upgrade to pay for itself.
+              </p>
+            </div>
+            <h4 style="margin-top:8px;">CTA</h4>
+            <p>
+              <b>"Get a Free Energy-Saving Estimate -- Upgrade & Save Big."</b>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE LAB -->
+      <section id="interactive-lab" class="interactive-lab">
+        <div class="section-label">Interactive Lab</div>
+        <h2 class="section-title">Make this homepage talk back.</h2>
+        <p class="section-sub">
+          Use these quick mini-tools to benchmark savings, decide which micro-site gets your click,
+          and rate how stressed the house feels. No email opt-in needed, just answers.
+        </p>
+
+        <div class="lab-grid">
+          <article class="lab-card">
+            <h3>Energy Savings Estimator</h3>
+            <p>
+              Plug in two numbers and Pool Joe will estimate annual savings plus a rough payback window.
+            </p>
+            <label class="lab-field">
+              Average monthly electric bill ($)
+              <input type="number" id="lab-bill" min="0" placeholder="320" />
+            </label>
+            <label class="lab-field">
+              Age of current system (years)
+              <input type="number" id="lab-age" min="0" placeholder="16" />
+            </label>
+            <label class="lab-field">
+              Cooling or heating runtime per day (hours)
+              <input type="number" id="lab-runtime" min="0" placeholder="8" />
+            </label>
+            <button class="lab-action" type="button" id="lab-calc">Estimate Savings</button>
+            <div class="lab-output" id="lab-output">
+              Enter a bill, age, and runtime to see how much an efficiency upgrade could save per year.
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <h3>Problem Priority Picker</h3>
+            <p>
+              Tell Pool Joe what hurts and get the recommended shot plus a link to the right micro-site.
+            </p>
+            <label class="lab-field">
+              Choose the situation
+              <select id="priority-select">
+                <option value="">Select a problem</option>
+                <option value="#ac-not-cooling">AC is running but not cooling</option>
+                <option value="#furnace-not-heating">Furnace blows cold air</option>
+                <option value="#ac-leaking-water">AC leaking water or pan full</option>
+                <option value="#thermostat-not-working">Thermostat acting weird</option>
+                <option value="#weak-airflow">Certain rooms never cool</option>
+                <option value="#high-energy-bills">Power bill just spiked</option>
+              </select>
+            </label>
+            <div class="lab-output" id="priority-output">
+              Pick a problem and we will route you to the right micro-site with a next best step.
+            </div>
+            <div class="lab-slider">
+              <label for="stress-slider">Stress meter (0 chill - 10 meltdown)</label>
+              <input type="range" id="stress-slider" min="0" max="10" value="4" />
+              <div class="lab-slider-readout">
+                <div>Level: <span id="stress-output">4</span> / 10</div>
+                <div class="lab-stress-note" id="stress-note">Room still playable.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQS -->
+      <section id="faqs">
+        <div class="section-label">Frequently Asked Questions</div>
+        <h2 class="section-title">FAQs about Pool Joe & the micro-site network.</h2>
+        <p class="section-sub">
+          These answer the obvious questions visitors--and HVAC owners--will ask when they see
+          that each common problem gets its own site.
+        </p>
+
+        <div class="faq-grid">
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-answer-1" id="faq-toggle-1">
+              <span>Are these 10 problems really separate websites?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-toggle-1">
+              <p>
+                Yes. Each one can live on its own domain (like <b>ACNotCooling.com</b>) or as a sub-site
+                under <b>pooljoe.com</b>. This homepage just introduces and links to them so you can see the
+                whole family in one place.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-answer-2" id="faq-toggle-2">
+              <span>Why split HVAC topics into separate sites?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-toggle-2">
+              <p>
+                Because people don't search "I would like to understand HVAC broadly today". They search
+                "ac not cooling" or "furnace not heating". A site dedicated to a single problem can go
+                deeper, convert better, and feel more trustworthy.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-answer-3" id="faq-toggle-3">
+              <span>Will I see the same content repeated on each site?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-toggle-3">
+              <p>
+                No. Each micro-site has its own trivia, facts, polls, and tools tailored to that one problem.
+                The internal links connect related issues without copying large blocks of text between them.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-answer-4" id="faq-toggle-4">
+              <span>Can local HVAC companies use these sites for leads?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-toggle-4">
+              <p>
+                Absolutely. Each micro-site can route form submissions and poll responses to a central system
+                or to specific partners per city, making this a plug-and-play lead engine.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-answer-5" id="faq-toggle-5">
+              <span>Where does the billiards angle come in?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-toggle-5">
+              <p>
+                Pool Joe uses billiards as the metaphor: you line up one shot, one problem, one explanation at
+                a time. No scattered advice, no "catch-all" pages that talk about everything and solve nothing.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-open="false">
+            <button class="faq-toggle" type="button" aria-expanded="false" aria-controls="faq-answer-6" id="faq-toggle-6">
+              <span>Can I jump straight to the problem that matches my house?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-toggle-6">
+              <p>
+                Yes--scroll back up to the <a href="#problems">HVAC Problem Hub</a> and click the card that
+                matches your situation. Each card links to the detailed section on this page now and to its own
+                standalone site next.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section id="reviews">
+        <div class="section-label">Reviews</div>
+        <h2 class="section-title">What people say about Pool Joe's way of explaining HVAC.</h2>
+        <p class="section-sub">
+          Instead of mystery invoices and vague explanations, visitors get clear language,
+          practical steps, and tools that actually help them decide what to do.
+        </p>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <p>
+              "I landed on the 'AC Not Cooling' site and within five minutes I understood more
+              about my system than in ten years of service visits. The poll plus the quick
+              checklist made it obvious I needed a tech--and I felt good about the call."
+            </p>
+            <div class="review-name">Monica G.</div>
+            <div class="review-meta">Homeowner * Phoenix, AZ</div>
+          </article>
+          <article class="review-card">
+            <p>
+              "As an HVAC owner, I love that each problem has its own landing page. We send
+              our ads to the exact micro-site that matches the symptom. It converts much
+              better than dumping everyone onto a generic home page."
+            </p>
+            <div class="review-name">Eric "EJ" H.</div>
+            <div class="review-meta">HVAC Contractor * Dallas-Fort Worth</div>
+          </article>
+          <article class="review-card">
+            <p>
+              "I originally came for the high energy bills calculator, stayed for the trivia.
+              The billiards metaphors sound silly, but they stick. Now I actually know why
+              my older system costs more to run."
+            </p>
+            <div class="review-name">Taryn P.</div>
+            <div class="review-meta">Townhome Owner * Denver, CO</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>(c) <span id="year"></span> Pool Joe * HVAC Micro-Sites &amp; Billiards Brain.</div>
+      <div class="footer-links">
+        <a href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to top</a>
+        <a href="#problems">View 10 HVAC problem sites</a>
+        <a href="#about">About Pool Joe</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // Problem Spotlight logic
+      const spotlightTitle = document.getElementById("spotlight-title");
+      const spotlightSummary = document.getElementById("spotlight-summary");
+      const spotlightTip = document.getElementById("spotlight-tip");
+      const spotlightCta = document.getElementById("spotlight-cta");
+      const problemCards = document.querySelectorAll(".problem-card");
+      let activeSpotlightLink = spotlightCta?.dataset.link || "";
+
+      const updateSpotlight = (card) => {
+        if (!card || !spotlightTitle || !spotlightSummary || !spotlightTip) {
+          return;
+        }
+        problemCards.forEach((c) => c.removeAttribute("data-active"));
+        card.dataset.active = "true";
+        if (card.dataset.problemTitle) {
+          spotlightTitle.textContent = card.dataset.problemTitle;
+        }
+        if (card.dataset.problemSummary) {
+          spotlightSummary.textContent = card.dataset.problemSummary;
+        }
+        if (card.dataset.problemTip) {
+          spotlightTip.textContent = card.dataset.problemTip;
+        }
+        activeSpotlightLink = card.dataset.problemLink || activeSpotlightLink;
+        if (spotlightCta) {
+          spotlightCta.dataset.link = activeSpotlightLink || "";
+        }
+      };
+
+      if (problemCards.length) {
+        updateSpotlight(problemCards[0]);
+        problemCards.forEach((card) => {
+          ["mouseenter", "focus"].forEach((evt) => {
+            card.addEventListener(evt, () => updateSpotlight(card));
+          });
+          card.addEventListener("click", () => updateSpotlight(card));
+        });
+      }
+
+      if (spotlightCta) {
+        spotlightCta.addEventListener("click", () => {
+          const target = activeSpotlightLink ? document.querySelector(activeSpotlightLink) : null;
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
+
+      // Energy savings estimator
+      const labBill = document.getElementById("lab-bill");
+      const labAge = document.getElementById("lab-age");
+      const labRuntime = document.getElementById("lab-runtime");
+      const labCalc = document.getElementById("lab-calc");
+      const labOutput = document.getElementById("lab-output");
+
+      if (
+        labCalc &&
+        labBill instanceof HTMLInputElement &&
+        labAge instanceof HTMLInputElement &&
+        labRuntime instanceof HTMLInputElement &&
+        labOutput
+      ) {
+        labCalc.addEventListener("click", () => {
+          const bill = parseFloat(labBill.value);
+          const age = parseFloat(labAge.value);
+          const runtime = parseFloat(labRuntime.value);
+          if ([bill, age, runtime].some((val) => Number.isNaN(val) || val < 0)) {
+            labOutput.textContent = "Enter positive numbers for bill, system age, and runtime to run the estimate.";
+            return;
+          }
+          const annualBill = bill * 12;
+          const efficiencyGain = Math.min(0.45, Math.max(0.08, age * 0.015 + runtime * 0.01));
+          const savings = Math.round(annualBill * efficiencyGain);
+          const payback = savings > 0 ? Math.max(1.5, Math.min(8, 6000 / savings)) : 8;
+          labOutput.innerHTML = `~<strong>$${savings.toLocaleString()}</strong> possible annual savings (${Math.round(
+            efficiencyGain * 100
+          )}% efficiency boost). Estimated payback: ${payback.toFixed(1)} years on a $6k upgrade. <a href="#high-energy-bills">See the efficiency playbook.</a>`;
+        });
+      }
+
+      // Priority picker
+      const prioritySelect = document.getElementById("priority-select");
+      const priorityOutput = document.getElementById("priority-output");
+      const defaultPriorityCopy = "Pick a problem and we will route you to the right micro-site with a next best step.";
+      const priorityInsights = {
+        "#ac-not-cooling": {
+          headline: "Cooling stalled?",
+          body: "Set the fan to ON for 10 minutes, swap the filter, then open the AC Not Cooling micro-site for coil checks before calling dispatch.",
+          tip: "Send the warm-air poll results with your service request so techs arrive pre-briefed.",
+        },
+        "#furnace-not-heating": {
+          headline: "Furnace refusing to heat?",
+          body: "Listen for inducer-fan-ignition order and log any blink codes in the Furnace Not Heating section before you call after-hours.",
+          tip: "If it locks out twice, cut power and let a pro reset it safely.",
+        },
+        "#ac-leaking-water": {
+          headline: "Water around the air handler?",
+          body: "Dry the area, clear the drain tee if possible, then use the AC Leaking Water guide to decide if you need same-day service.",
+          tip: "A tripped float switch means shut the system off until the line is clear.",
+        },
+        "#thermostat-not-working": {
+          headline: "Thermostat acting haunted?",
+          body: "Swap the batteries, confirm the system type, then walk through the Thermostat Not Working micro-site to match the right smart stat.",
+          tip: "If the screen stays blank, leave breakers off and schedule a control visit.",
+        },
+        "#weak-airflow": {
+          headline: "Some rooms never cool?",
+          body: "Use the Weak Airflow comfort map to note rooms, open every return, and capture duct clues before adjusting dampers.",
+          tip: "Mark the worst room so techs know exactly where to start diagnostics.",
+        },
+        "#high-energy-bills": {
+          headline: "Utility bill just spiked?",
+          body: "Run the calculator, then open the High Energy Bills breakdown for rebate ideas and staged upgrade paths.",
+          tip: "Grab last year's bill so you can compare kWh with the sales team.",
+        },
+      };
+
+      if (prioritySelect instanceof HTMLSelectElement && priorityOutput) {
+        prioritySelect.addEventListener("change", () => {
+          const value = prioritySelect.value;
+          const insight = priorityInsights[value];
+          if (!insight) {
+            priorityOutput.textContent = defaultPriorityCopy;
+            return;
+          }
+          priorityOutput.innerHTML = `<strong>${insight.headline}</strong> ${insight.body} <span class="lab-inline-tip">${insight.tip} <a href="${value}">Go to that section.</a></span>`;
+        });
+      }
+
+      const stressSlider = document.getElementById("stress-slider");
+      const stressOutput = document.getElementById("stress-output");
+      const stressNote = document.getElementById("stress-note");
+      if (stressSlider instanceof HTMLInputElement && stressOutput && stressNote) {
+        const stressMessages = [
+          "Total chill. Knock out a filter check tonight.",
+          "Still calm. Schedule maintenance this week.",
+          "Medium stress. Prioritize the most annoying room.",
+          "Heating up. Consider booking a diagnostic.",
+          "Cue the pros. This feels urgent.",
+        ];
+        const updateStress = (value) => {
+          stressOutput.textContent = value;
+          const numeric = Number(value);
+          let note = stressMessages[0];
+          if (numeric >= 8) note = stressMessages[4];
+          else if (numeric >= 6) note = stressMessages[3];
+          else if (numeric >= 4) note = stressMessages[2];
+          else if (numeric >= 2) note = stressMessages[1];
+          stressNote.textContent = note;
+        };
+        updateStress(stressSlider.value);
+        stressSlider.addEventListener("input", () => updateStress(stressSlider.value));
+      }
+
+      // FAQ accordion
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const toggle = item.querySelector(".faq-toggle");
+        const answerId = toggle?.getAttribute("aria-controls");
+        if (!toggle || !answerId) {
+          return;
+        }
+        const answer = document.getElementById(answerId);
+        if (!answer) {
+          return;
+        }
+        toggle.addEventListener("click", () => {
+          const isOpen = item.dataset.open === "true";
+          item.dataset.open = isOpen ? "false" : "true";
+          toggle.setAttribute("aria-expanded", String(!isOpen));
+          answer.style.maxHeight = !isOpen ? `${answer.scrollHeight}px` : "0px";
+          answer.style.opacity = !isOpen ? "1" : "0";
+          answer.style.paddingBottom = !isOpen ? "14px" : "0";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
