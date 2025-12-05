@@ -74,6 +74,46 @@
       z-index: 20;
     }
 
+    .alert-banner {
+      margin-bottom: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(248, 113, 113, 0.6);
+      background: rgba(127, 29, 29, 0.25);
+      padding: 12px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      animation: bannerBlink 1.4s infinite;
+    }
+
+    .alert-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: #f87171;
+      box-shadow: 0 0 12px rgba(248, 113, 113, 0.9);
+      margin-top: 4px;
+    }
+
+    .alert-text {
+      font-size: 13px;
+      color: #fecaca;
+    }
+
+    .alert-text b {
+      color: #ffe4e6;
+    }
+
+    @keyframes bannerBlink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.55;
+      }
+    }
+
     .logo {
       display: flex;
       align-items: center;
@@ -973,6 +1013,13 @@
         <a href="#reviews">Reviews</a>
       </nav>
     </header>
+
+    <div class="alert-banner" role="status" aria-live="polite">
+      <div class="alert-dot"></div>
+      <div class="alert-text">
+        <b>Joe, quick heads-up:</b> this page is a single template preview. The ten problem sites will live separately, and only their high-level details are below for now. Dane will walk you through how each standalone site works later, so treat this as the staging table, not the final felt.
+      </div>
+    </div>
 
     <main>
       <!-- HERO -->
